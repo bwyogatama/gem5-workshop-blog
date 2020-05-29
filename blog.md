@@ -16,11 +16,12 @@ We categorize the changes required in gem5 to enable multi-GPU into 3 categories
 1. Replicating GPU components
 2. Extending multi-GPU support in the emulated driver (ROCk)
 3. Enabling writeback support in gem5 coherence protocol
-Table below summarizes the file changes to add this support.
 
 ## Replicating GPU Components
 
-Figure ... shows the GPU components that we replicate. Since we use a single-driver multi-GPU model, we will instantiate multiple GPU node on top of a single emulated driver (ROCk). Each GPU node will then have its own command processor, hardware scheduler, packet processor, dispatcher, and compute units. To ensure that each of the GPU components is distinguishable, we passed a unique GPU ID parameter to each component. For components that is operating on specific address range (e.g packet processor), we will also assign unique address range to avoid overlapping.
+Figure 1 shows the GPU components that we replicate. Since we use a single-driver multi-GPU model, we will instantiate multiple GPU node on top of a single emulated driver (ROCk). Each GPU node will then have its own command processor, hardware scheduler, packet processor, dispatcher, and compute units. To ensure that each of the GPU components is distinguishable, we passed a unique GPU ID parameter to each component. For components that is operating on specific address range (e.g packet processor), we will also assign unique address range to avoid overlapping.
+
+![Figure 1. Replicating GPU Components](/image/replicate.png)
 
 ## Adding Emulated Driver (ROCk) Support for Multi-GPU
 
