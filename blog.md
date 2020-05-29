@@ -60,3 +60,5 @@ To test our changes, we run a set of benchmarks with input sizes and GPU configu
 Figure 5 shows per GPU execution time for 1, 2, and 4 GPUs when running various benchmarks. It can be seen that the execution time decrease as we increase the total number of GPUs. We can also see that the speedup is not linear and could vary between workloads. This is most likely due to the serial portion of the workload that could be different between one another.
 
 <img src="https://github.com/bwyogatama/gem5-workshop-blog/blob/master/image/result.png" alt="Figure 6" width="600"/>
+
+## Conclusion
