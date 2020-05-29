@@ -21,7 +21,7 @@ We categorize the changes required in gem5 to enable multi-GPU into 3 categories
 
 Figure 1 shows the GPU components that we replicate. Since we use a single-driver multi-GPU model, we will instantiate multiple GPU node on top of a single emulated driver (ROCk). Each GPU node will then have its own command processor, hardware scheduler, packet processor, dispatcher, and compute units. To ensure that each of the GPU components is distinguishable, we passed a unique GPU ID parameter to each component. For components that is operating on specific address range (e.g packet processor), we will also assign unique address range to avoid overlapping.
 
-<img src="https://github.com/bwyogatama/gem5-workshop-blog/blob/master/image/replicate.png" alt="Figure 1" width="800"/>
+<img src="https://github.com/bwyogatama/gem5-workshop-blog/blob/master/image/replicate.png" class="center" alt="Figure 1" width="600"/>
 
 ## Adding Emulated Driver (ROCk) Support for Multi-GPU
 
