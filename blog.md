@@ -1,14 +1,19 @@
+#Enabling Multi-GPU Support in gem5
+
 Introduction
+-----------
 
 In the past decade, GPUs have become an important resource for compute-intensive applications such as graphics processing, machine learning, big data analysis, and large-scale simulations. In the future, with the explosion of machine learning and big data, application demands will keep increasing, resulting in more data and computation being pushed to GPUs. However, due to the slowing of Moore's Law and increasing manufacturing costs, it is becoming more and more challenging to add compute resources into a single GPU device to improve its throughput. As a result, using multiple GPUs on a single host is becoming popular in  data-centric and scientific applications. For example, Facebook uses 8 GPUs and two CPU sockets in their machine-learning platform.
 
 However, most  GPU hardware simulators such as GPGPU-Sim and gem5 AMD APU support only a single GPU, making them impractical to run multi-GPU simulations. This precludes studying interference between GPUs, communication between GPUs, or work scheduling across GPUs. In this work, we will discuss the changes required to add multi-GPU support in gem5, including the changes to the kernel fusion driver, GPU components, and other additions. Finally, to demonstrate the efficacy of our changes, we show some results for running various benchmarks in a multi-GPU environment.
 
 gem5 AMD APU
+------------
 
 gem5 AMD APU extends gem5 with a GPU timing model that executes on top of ROCm (Radeon Open Compute Platform), a framework for GPU accelerated computing. Figure below shows the simulation flow when gem5 simulates a GPU. The application source is compiled by the HCC generating an application binary that is loaded into the memory. At the same time, HCC compiler will produce HCC libraries which will invoke the ROCr runtime library which will call the ROCt user space driver. This driver will then make an ioctl() system call to the kernel fusion driver (ROCk) which is simulated in gem5. Fortunately, the user space is already capable of supporting multi-GPU, and therefore we only need to update the support in gem5.
 
 Multi-GPU support in gem5
+-------------------------
 
 We categorize the changes required in gem5 to enable multi-GPU into 3 categories:
 1. Replicating GPU components
@@ -17,10 +22,12 @@ We categorize the changes required in gem5 to enable multi-GPU into 3 categories
 Table below summarizes the file changes to add this support.
 
 Replicating GPU components
+--------------------------
 
 Figure ... shows the GPU components that we replicate. Since we use a single-driver multi-GPU model, we will instantiate multiple GPU node on top of a single emulated driver (ROCk). Each GPU node will then have its own command processor, hardware scheduler, packet processor, dispatcher, and compute units. To ensure that each of the GPU components is distinguishable, we passed a unique GPU ID parameter to each component. For components that is operating on specific address range (e.g packet processor), we will also assign unique address range to avoid overlapping.
 
 Adding emulated driver (ROCk) support for multi-GPU
+---------------------------------------------------
 
 Since the ROCk is designed to only support a single GPU, we need to add multi-GPU support to ROCk. There are two changes required to add this support:
 1. Managing software queues and sending works to multiple GPUs.
