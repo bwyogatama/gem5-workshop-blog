@@ -23,7 +23,7 @@ The recent gem5 AMD APU model extends gem5 with an accurate, high fidelity GPU t
 
 We found three categories of changes were needed to enable multi-GPU support in gem5:
 1. Replicating GPU components
-2. Extending multi-GPU support in the emulated driver (ROCk)
+2. Adding Emulated Driver (ROCk) Support for Multi-GPU
 3. Enabling writeback support in gem5 coherence protocol
 
 ## Replicating GPU Components
