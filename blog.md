@@ -1,7 +1,4 @@
 # Enabling Multi-GPU Support in gem5
-<em>Bobbi W. Yogatama, Matthew D. Sinclair, and Michael M. Swift.</em>
-
-The University of Wisconsin-Madison
 
 ## Introduction
 
