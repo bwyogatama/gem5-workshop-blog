@@ -11,11 +11,7 @@ date:   2020-05-30
 
 In the past decade, GPUs have become an important resource for compute-intensive, general-purpose GPU applications such as machine learning, big data analysis, and large-scale simulations. In the future, with the explosion of machine learning and big data, application demands will keep increasing, resulting in more data and computation being pushed to GPUs. However, due to the slowing of Moore's Law and rising manufacturing costs, it is becoming more and more challenging to add compute resources into a single GPU device to improve its throughput. As a result, having programs spread their work across multiple GPUs is popular in data-centric and scientific applications. For example, Facebook uses 8 GPUs per server in a recent machine learning platform.
 
-However research infrastructure has not kept pace with this trend; most  GPU hardware simulators such as GPGPU-Sim and gem5 AMD APU support only a single GPU, making them impractical to run multi-GPU simulations. This precludes studying interference between GPUs, communication between GPUs, or work scheduling across GPUs.
-
-*MS comment: introduce our work here, not the article. Something like: "Our research group has been working to address this shortcoming by adding multi-GPU support to gem5. We found changes were needed to the ..." -- make it more about introducing our work than introducing the article.*
-
-In this work, we will discuss the changes required to add multi-GPU support in gem5, including the changes to the kernel fusion driver, GPU components, and other additions. Finally, to demonstrate the efficacy of our changes, we show some results for running various benchmarks in a multi-GPU environment.
+However research infrastructure has not kept pace with this trend; most  GPU hardware simulators such as GPGPU-Sim and gem5 AMD APU support only a single GPU, making them impractical to run multi-GPU simulations. This precludes studying interference between GPUs, communication between GPUs, or work scheduling across GPUs. Our research group has been working to address this shortcoming by adding multi-GPU support to gem5. We found changes were needed to the emulated driver, GPU components, and coherence protocol. Finally, to demonstrate the efficacy of our changes, we show some results for running various benchmarks in a multi-GPU environment.
 
 ## gem5 AMD APU
 
@@ -29,9 +25,7 @@ invoke the ROCr runtime library which calls the ROCt user space driver. This dri
 
 ## Multi-GPU Support in gem5
 
-*MS: Write this more as a story of what you did, rather than an article: 'We found three categories of changes were needed ..."*
-
-We categorize the changes required in gem5 to enable multi-GPU into 3 categories:
+We found three categories of changes were needed to enable multi-GPU support in gem5
 1. Replicating GPU components
 2. Extending multi-GPU support in the emulated driver (ROCk)
 3. Enabling writeback support in gem5 coherence protocol
