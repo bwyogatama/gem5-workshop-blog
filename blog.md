@@ -42,7 +42,7 @@ Application source typically communicates with the GPU using one or more softwar
 
 <figure>
     <img src="https://github.com/bwyogatama/gem5-workshop-blog/blob/master/image/queue.png" alt="Figure 3" width="400"/>
-    <em>Figure 3. Applicatiosn to GPU Communication</em>
+    <em>Figure 3. Applications to GPU Communication</em>
 </figure>
 
 
