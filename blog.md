@@ -25,7 +25,7 @@ invoke the ROCr runtime library which calls the ROCt user space driver. This dri
 
 ## Multi-GPU Support in gem5
 
-We found three categories of changes were needed to enable multi-GPU support in gem5
+We found three categories of changes were needed to enable multi-GPU support in gem5:
 1. Replicating GPU components
 2. Extending multi-GPU support in the emulated driver (ROCk)
 3. Enabling writeback support in gem5 coherence protocol
