@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Enabling Multi-GPU Support in gem5"
-author: Bobbi Yogatama, Matthew D. Sinclair, and Michael M. Swift
+author: Bobbi W. Yogatama, Matthew D. Sinclair, and Michael M. Swift
 date:   2020-05-30
 ---
 
