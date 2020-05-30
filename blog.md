@@ -60,3 +60,7 @@ Figure 5 shows how our added GPU WB support compares to the current WT approach.
 <img src="https://github.com/bwyogatama/gem5-workshop-blog/blob/master/image/writeback.png" alt="Figure 5" width="600"/>
 
 ## Conclusion
+
+In recent few years, multi-GPU systems have become increasingly common as more data and computation being pushed into GPU. However, up until now, gem5 only simulates a single GPU, which makes it difficult to study issues arising in multi-GPU system. Our research group attempts to address this issue by extending multi-GPU support in gem5 by (1) Replicating the GPU components, (2) Modifying the emulated driver, and (3) Enabling writeback support in the coherence protocol.
+
+To test our changes, we also run multi-GPU experiment on various benchmarks and observe that per GPU execution time decrease as we increase the total number of GPUs. For details about our changes and result of our experiment, check our workshop presentation [here](https://www.youtube.com/watch?v=TSULdaGw0V8&list=PL_hVbFs_loVQ8FDTRCmRvmkPFzf6swgZh&index=3&t=2s) !!!
