@@ -66,7 +66,7 @@ Figure 5 shows how our added GPU WB support compares to the current WT approach.
 
 <figure>
     <img src="https://github.com/bwyogatama/gem5-workshop-blog/blob/master/image/writeback.png" alt="Figure 5" width="500"/>
-    <em>Figure 5. Writethrough vs Writeback</em>
+    <em>Figure 5. Writethrough vs Writeback Implementation</em>
 </figure>
 
 
