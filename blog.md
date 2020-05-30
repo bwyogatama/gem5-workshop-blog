@@ -52,7 +52,7 @@ Doorbells are a mechanism for user-space software to signal the GPU that there i
 However, the GPU identity is not visible to the mmap() system call, so ROCk does not know which GPU to map to a doorbell region. We address this issue by encoding the GPU ID into the *offset* parameter passed to mmap(). The encoded offset is returned to user space from the create queue ioctl() ioctl call. Thus, the mmap() system call can decode the GPU ID from the offset parameter, and identify the associated GPU doorbell region used for mapping. This mechanism is illustrated in the Figure 4.
 
 <figure>
-    <img src="https://github.com/bwyogatama/gem5-workshop-blog/blob/master/image/mmap.png" alt="Figure 4" width="600"/>
+    <img src="https://github.com/bwyogatama/gem5-workshop-blog/blob/master/image/mmap.png" alt="Figure 4" width="500"/>
     <em>Figure 4. Mapping Doorbell Region for Multiple GPUs</em>
 </figure>
 
