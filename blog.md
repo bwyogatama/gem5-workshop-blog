@@ -6,6 +6,10 @@ author: Bobbi W. Yogatama, Matthew D. Sinclair, and Michael M. Swift
 date:   2020-05-30
 ---
 
+% title
+% author(s) (separated by semicolons)
+% date
+
 ## Introduction
 
 In the past decade, GPUs have become an important resource for compute-intensive, general-purpose GPU applications such as machine learning, big data analysis, and large-scale simulations. In the future, with the explosion of machine learning and big data, application demands will keep increasing, resulting in more data and computation being pushed to GPUs. However, due to the slowing of Moore's Law and rising manufacturing costs, it is becoming more and more challenging to add compute resources into a single GPU device to improve its throughput. As a result, having programs spread their work across multiple GPUs is popular in data-centric and scientific applications. For example, Facebook uses 8 GPUs per server in a recent machine learning platform.
