@@ -1,5 +1,3 @@
-# Enabling Multi-GPU Support in gem5
-
 ---
 layout: post
 title:  "Enabling Multi-GPU Support in gem5"
