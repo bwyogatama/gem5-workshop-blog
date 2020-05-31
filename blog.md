@@ -13,7 +13,7 @@ However, research infrastructure has not kept pace with this trend: most GPU har
 
 ## gem5 AMD APU
 
-The recent gem5 AMD APU model extends gem5 with an accurate, high fidelity GPU timing model that executes on top of ROCm (Radeon Open Compute Platform), AMD's framework for GPU-accelerated computing. Figure 1 shows the simulation flow when gem5 simulates a GPU. The application source is compiled by the HCC compiler, generating an application binaries comprising both x86 code for the CPU and gcn3 code for the GPU that are loaded into the simulated memory.  The compiled program invokes the ROCr runtime library which calls the ROCt user-space driver. This driver makes ioctl() system calls to the kernel fusion driver (ROCk), which is simulated in gem5 since the current GPU support uses syscall emulation (SE) mode.  
+The recent gem5 AMD APU model extends gem5 with an accurate, high fidelity GPU timing model that executes on top of ROCm (Radeon Open Compute Platform), AMD's framework for GPU-accelerated computing. Figure 1 shows the simulation flow when gem5 simulates a GPU. The application source is compiled by the HCC compiler, generating an application binary which comprises of both x86 code for the CPU and gcn3 code for the GPU that is loaded into the simulated memory.  The compiled program invokes the ROCr runtime library which calls the ROCt user-space driver. This driver makes ioctl() system calls to the kernel fusion driver (ROCk), which is simulated in gem5 since the current GPU support uses syscall emulation (SE) mode.  
 
 <figure>
     <img src="https://github.com/bwyogatama/gem5-workshop-blog/blob/master/image/overview.png" alt="Figure 1" width="600"/>
